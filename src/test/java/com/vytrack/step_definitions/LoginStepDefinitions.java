@@ -13,8 +13,8 @@ public class LoginStepDefinitions {
     @Then("user logs in as store manager")
     public void user_logs_in_as_store_manager() {
         System.out.println("Login as store manager");
-
     }
+
     //any string in "word" will become a parameter for step definition method
     //  And user verifies that "Dashboard" page subtitle is displayed
     @Then("user verifies that {string} page subtitle is displayed")
