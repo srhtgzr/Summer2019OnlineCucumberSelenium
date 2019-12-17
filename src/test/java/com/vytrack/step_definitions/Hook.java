@@ -14,6 +14,7 @@ public class Hook {
 
     @After
     public void teardown(Scenario scenario){
+        //if test failed - do this
         if(scenario.isFailed()){
             System.out.println("Test failed!");
         }else{
