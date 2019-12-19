@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import sun.swing.StringUIClientPropertyKey;
 
 public class Driver {
     private static WebDriver driver;
@@ -25,10 +26,15 @@ public class Driver {
                 case "chrome":
                     WebDriverManager.chromedriver().setup();
                     //to configure chrome browser for tests
-                    ChromeOptions chromeOptions = new ChromeOptions();
+                    driver = new ChromeDriver();
+                    break;
+                case "chrome_headless":
+                    WebDriverManager.chromedriver().setup();
+                    //to configure chrome browser for tests
+                    ChromeOptions options = new ChromeOptions();
                     //to run tests without interface, set to true
-                    chromeOptions.setHeadless(false);
-                    driver = new ChromeDriver(chromeOptions);
+                    options.setHeadless(true);
+                    driver = new ChromeDriver(options);
                     break;
                 case "firefox":
                     WebDriverManager.firefoxdriver().setup();
