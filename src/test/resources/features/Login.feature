@@ -46,3 +46,4 @@ Feature: Login
     Then user logs in as driver with following credentials
       | username | user160     |
       | password | UserUser123 |
+    And user verifies that "Quick Launchpad" page subtitle is displayed
