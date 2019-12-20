@@ -39,3 +39,10 @@ Feature: Login
     Then user enters "wrong_username" username and "UserUser123" password
     And user verifies that "Invalid user name or password." message is displayed
 
+
+  @driver_with_data_table
+  Scenario: Login as driver (data table example)
+    Given user is on the login page
+    Then user logs in as driver with following credentials
+      | username | user160     |
+      | password | UserUser123 |
