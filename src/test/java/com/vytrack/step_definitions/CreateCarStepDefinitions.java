@@ -24,16 +24,20 @@ public class CreateCarStepDefinitions {
     //    Then user adds new car information:
 //            | License Plate | Driver      | Location        | Model Year | Color |
 //            | TestPlates    | Test Driver | Washington D.C. | 2020       | Black |
+//            | SomePlates    | Super Driver| Reston, VA      | 2012       | Red   |
 //      dataTable.get(0).get("Model Year") = 2020
 //    get(0) - means get data from first row (excluding column names or header)
 //    .get("Model Year") - get value of Model Year
     @Then("user adds new car information:")
     public void user_adds_new_car_information(List<Map<String, String>> dataTable) {
         //as many rows of data you have, it will create cars
+        //wait
+        createCarPage.waitUntilLoaderMaskDisappear();
+        System.out.println(dataTable);
         for (Map<String, String> map : dataTable) {
             createCarPage.licensePlateElement.sendKeys(map.get("License Plate"));
             createCarPage.driverElement.sendKeys(map.get("Driver"));
-            createCarPage.logoElement.sendKeys(map.get("Location"));
+            createCarPage.locationElement.sendKeys(map.get("Location"));
             createCarPage.modelYearElement.sendKeys(map.get("Model Year"));
             createCarPage.colorElement.sendKeys(map.get("Color"));
             BrowserUtils.wait(2);//for demo
