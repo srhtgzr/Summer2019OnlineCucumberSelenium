@@ -162,7 +162,6 @@ public class BrowserUtils {
     public static void waitForPageTitle(String pageTitle) {
         WebDriverWait wait = new WebDriverWait(Driver.get(), 10);
         wait.until(ExpectedConditions.titleIs(pageTitle));
-
     }
 
     /**

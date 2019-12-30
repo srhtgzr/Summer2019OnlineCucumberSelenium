@@ -94,7 +94,7 @@ Feature: Login
 
     Examples: drivers
       | role   | module     | sub module      | title                                                        |
-      | driver | Fleet      | Vehicles        | All - Car - Entities - System - Car - Entities - System      |
+      | driver | Fleet      | Vehicles        | Car - Entities - System - Car - Entities - System            |
       | driver | Fleet      | Vehicles Model  | Vehicles Model - Entities - System - Car - Entities - System |
       | driver | Customers  | Accounts        | Accounts - Customers                                         |
       | driver | Customers  | Contacts        | Contacts - Customers                                         |
