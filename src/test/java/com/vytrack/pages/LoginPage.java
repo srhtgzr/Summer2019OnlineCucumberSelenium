@@ -1,5 +1,6 @@
 package com.vytrack.pages;
 
+import com.vytrack.utilities.ConfigurationReader;
 import com.vytrack.utilities.Driver;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -11,7 +12,7 @@ import org.openqa.selenium.support.PageFactory;
 //for each page of application
 //login page = login page class
 //every page class will store webelements and methods related to that page
-public class LoginPage extends BasePage{
+public class LoginPage extends BasePage {
 
     @FindBy(id = "prependedInput") //this line will initialize web element
     public WebElement userNameInput;
@@ -36,13 +37,35 @@ public class LoginPage extends BasePage{
      * reusable login method
      * just call this method to login
      * provide username and password as parameters
+     *
      * @param userName
      * @param password
      */
-    public void login(String userName, String password){
+    public void login(String userName, String password) {
         userNameInput.sendKeys(userName);
         //Keys.ENTER to replace login click
         passwordInput.sendKeys(password, Keys.ENTER);
     }
+
+    public void login(String role) {
+        String userName = "";
+        String password = ConfigurationReader.getProperty("password");
+
+        switch (role) {
+            case "driver":
+                userName = ConfigurationReader.getProperty("driver.username");
+                break;
+            case "store manager":
+                userName = ConfigurationReader.getProperty("store.manager.username");
+                break;
+            case "sales manager":
+                userName = ConfigurationReader.getProperty("sales.manager.username");
+                break;
+            default:
+                throw new RuntimeException("Invalid role!");
+        }
+        login(userName, password);
+    }
+
 
 }
