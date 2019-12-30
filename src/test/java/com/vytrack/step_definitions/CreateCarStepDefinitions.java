@@ -34,6 +34,7 @@ public class CreateCarStepDefinitions {
         //wait
         createCarPage.waitUntilLoaderMaskDisappear();
         System.out.println(dataTable);
+        int row = 1;
         for (Map<String, String> map : dataTable) {
             createCarPage.licensePlateElement.sendKeys(map.get("License Plate"));
             createCarPage.driverElement.sendKeys(map.get("Driver"));
@@ -41,8 +42,13 @@ public class CreateCarStepDefinitions {
             createCarPage.modelYearElement.sendKeys(map.get("Model Year"));
             createCarPage.colorElement.sendKeys(map.get("Color"));
             BrowserUtils.wait(2);//for demo
-            createCarPage.saveAndCloseButtonElement.click();
+            if (row == dataTable.size()) {
+                createCarPage.clickSaveAndClose();
+            } else {
+                createCarPage.clickSaveAndAddNew();
+            }
             BrowserUtils.wait(2);//for demo
+            row++;
         }
     }
 
