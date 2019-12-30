@@ -64,7 +64,7 @@ Feature: Login
     Then user logs in as "store manager"
 
   @login_with_role_ddt
-  Scenario Outline: Login as <role>
+  Scenario Outline: DDT example, Login as <role>
     Given user is on the login page
     Then user logs in as "<role>"
 
@@ -74,4 +74,13 @@ Feature: Login
       | sales manager |
       | store manager |
 
+  @login_with_credentials_ddt
+  Scenario Outline: DDT example with credentials, Login as <username>
+    Given user is on the login page
+    Then user enters "<username>" username and "<password>" password
 
+    Examples:
+      | username        | password    |
+      | storemanager85  | UserUser123 |
+      | user160         | UserUser123 |
+      | salesmanager110 | UserUser123 |
