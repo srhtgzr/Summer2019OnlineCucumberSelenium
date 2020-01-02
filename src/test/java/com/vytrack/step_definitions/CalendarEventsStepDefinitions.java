@@ -17,7 +17,11 @@ public class CalendarEventsStepDefinitions {
 //            | RECURRENT         |
 //            | RECURRENCE        |
 //            | INVITATION STATUS |
-    CalendarEventsPage calendarEventsPage = new CalendarEventsPage();
+    CalendarEventsPage calendarEventsPage;
+
+    public CalendarEventsStepDefinitions(CalendarEventsPage calendarEventsPage) {
+        this.calendarEventsPage = calendarEventsPage;
+    }
 
     @Then("user verifies that column names are displayed")
     public void user_verifies_that_column_names_are_displayed(List<String> dataTable) {

@@ -4,7 +4,11 @@ import com.vytrack.pages.LoginPage;
 import io.cucumber.java.en.*;
 
 public class TopMenuStepDefinitions {
-    LoginPage loginPage = new LoginPage();
+    LoginPage loginPage;
+
+    public TopMenuStepDefinitions(LoginPage loginPage) {
+        this.loginPage = loginPage;
+    }
 
     // And user navigates to "Dashboards" then to "Manage Dashboards"
     @Then("user navigates to {string} then to {string}")

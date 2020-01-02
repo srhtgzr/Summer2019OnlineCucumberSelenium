@@ -10,8 +10,13 @@ import java.util.Map;
 
 public class CreateCarStepDefinitions {
 
-    CreateCarPage createCarPage = new CreateCarPage();
-    VehiclesPage vehiclesPage = new VehiclesPage();
+    CreateCarPage createCarPage;
+    VehiclesPage vehiclesPage;
+
+    public CreateCarStepDefinitions(CreateCarPage createCarPage, VehiclesPage vehiclesPage) {
+        this.createCarPage = createCarPage;
+        this.vehiclesPage = vehiclesPage;
+    }
 
     @Then("user click on {string} button")
     public void user_click_on_button(String string) {

@@ -11,7 +11,11 @@ import java.util.Map;
 
 public class LoginStepDefinitions {
     // Write code here that turns the phrase above into concrete actions
-    LoginPage loginPage = new LoginPage();//created login page object
+    LoginPage loginPage;//created login page object
+
+    public LoginStepDefinitions(LoginPage loginPage) {
+        this.loginPage = loginPage;
+    }
 
     @Given("user is on the login page")
     public void user_is_on_the_login_page() {

@@ -9,6 +9,12 @@ import org.openqa.selenium.TakesScreenshot;
 
 public class Hook {
 
+    public Hook(){
+//        if (Driver.get() == null) {
+            Driver.addDriver(Driver.createDriver());
+//        }
+    }
+
     @Before
     public void setup(){
         System.out.println("##############################");
