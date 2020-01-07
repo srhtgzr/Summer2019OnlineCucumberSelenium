@@ -10,7 +10,7 @@ import org.testng.annotations.DataProvider;
         features = "src/test/resources/features",
         glue = "com/vytrack/step_definitions",
         dryRun = false,
-        tags = "@smoke_test or @create_car or @calendar_events",
+        tags = "@login_with_roles_ddt_2",
         plugin = {"html:target/default-cucumber-reports",
                 "json:target/cucumber.json",
                 "rerun:target/rerun.txt",
