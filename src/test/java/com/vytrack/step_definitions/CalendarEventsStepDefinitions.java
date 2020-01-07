@@ -3,20 +3,12 @@ package com.vytrack.step_definitions;
 import com.vytrack.pages.CalendarEventsPage;
 import com.vytrack.utilities.BrowserUtils;
 import io.cucumber.java.en.Then;
-import org.junit.Assert;
+import org.testng.Assert;
 
 import java.util.List;
 
 public class CalendarEventsStepDefinitions {
 
-//    And user verifies that column names are displayed
-//            | TITLE             |
-//            | CALENDAR          |
-//            | START             |
-//            | END               |
-//            | RECURRENT         |
-//            | RECURRENCE        |
-//            | INVITATION STATUS |
     CalendarEventsPage calendarEventsPage;
 
     public CalendarEventsStepDefinitions(CalendarEventsPage calendarEventsPage) {

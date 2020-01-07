@@ -1,19 +1,13 @@
 package com.vytrack.step_definitions;
 
 import com.vytrack.utilities.Driver;
-import io.cucumber.core.api.Scenario;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
 public class Hook {
-
-    public Hook(){
-//        if (Driver.get() == null) {
-            Driver.addDriver(Driver.createDriver());
-//        }
-    }
 
     @Before
     public void setup(){

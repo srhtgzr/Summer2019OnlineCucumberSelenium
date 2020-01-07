@@ -11,6 +11,7 @@
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+        <cucumber.version>5.0.0-RC1</cucumber.version>
     </properties>
 
     <dependencies>
@@ -18,7 +19,6 @@
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
             <version>3.7.1</version>
-<!--            <scope>test</scope>-->
         </dependency>
 
         <dependency>
@@ -37,15 +37,23 @@
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
-            <version>4.8.0</version>
+            <version>${cucumber.version}</version>
         </dependency>
-
-
-        <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-junit -->
         <dependency>
             <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-junit</artifactId>
-            <version>4.8.0</version>
+            <artifactId>cucumber-testng</artifactId>
+            <version>${cucumber.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-picocontainer</artifactId>
+            <version>${cucumber.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>7.0.0</version>
+            <scope>test</scope>
         </dependency>
 
         <dependency>
@@ -63,30 +71,12 @@
             <artifactId>log4j-core</artifactId>
             <version>2.12.1</version>
         </dependency>
-        <dependency>
-            <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-picocontainer</artifactId>
-            <version>4.8.0</version>
-        </dependency>
+
 
     </dependencies>
 
     <build>
         <plugins>
-<!--            <plugin>-->
-<!--                <groupId>org.apache.maven.plugins</groupId>-->
-<!--                <artifactId>maven-surefire-plugin</artifactId>-->
-<!--                <version>3.0.0-M3</version>-->
-<!--                <configuration>-->
-<!--                    <parallel>methods</parallel>-->
-<!--                    <threadCount>4</threadCount>-->
-<!--                    <forkMode>perthread</forkMode>-->
-<!--                    <includes>-->
-<!--                        <include>**/*IT.java</include>-->
-<!--                    </includes>-->
-<!--                    <testFailureIgnore>true</testFailureIgnore>-->
-<!--                </configuration>-->
-<!--            </plugin>-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-failsafe-plugin</artifactId>
@@ -99,9 +89,10 @@
                         </goals>
                         <configuration>
                             <parallel>methods</parallel>
-                            <useUnlimitedThreads>true</useUnlimitedThreads>
+                            <threadCount>2</threadCount>
+                            <perCoreThreadCount>false</perCoreThreadCount>
                             <includes>
-                                <include>**/RunCucumberIT.java</include>
+                                <include>**/CucumberRunnerIT.java</include>
                             </includes>
                         </configuration>
                     </execution>

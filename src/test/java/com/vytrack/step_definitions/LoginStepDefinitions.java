@@ -5,12 +5,11 @@ import com.vytrack.utilities.BrowserUtils;
 import com.vytrack.utilities.ConfigurationReader;
 import com.vytrack.utilities.Driver;
 import io.cucumber.java.en.*;
-import org.junit.Assert;
+import org.testng.Assert;
 
 import java.util.Map;
 
 public class LoginStepDefinitions {
-    // Write code here that turns the phrase above into concrete actions
     LoginPage loginPage;//created login page object
 
     public LoginStepDefinitions(LoginPage loginPage) {
@@ -64,9 +63,6 @@ public class LoginStepDefinitions {
     public void user_verifies_that_message_is_displayed(String string) {
         System.out.println("Verified that warning message is displayed: " + string);
     }
-//    Then user logs in as driver with following credentials
-//            | username | user160     |
-//            | password | UserUser123 |
 
     @Then("user logs in as driver with following credentials")
     public void user_logs_in_as_driver_with_following_credentials(Map<String, String> dataTable) {
