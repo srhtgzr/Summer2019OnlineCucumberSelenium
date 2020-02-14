@@ -10,3 +10,4 @@ Feature: Create new car
       | License Plate | Driver      | Location        | Model Year | Color |
       | TestPlates    | Test Driver | Washington D.C. | 2020       | Black |
       | SuperMan      | Cool Driver | Texas           | 2019       | Red   |
+

@@ -9,6 +9,7 @@ import org.junit.runner.RunWith;
         features = {
                 "src/test/resources/features/activities",
                 "src/test/resources/features/fleet"
+
         },
         glue = "com/vytrack/step_definitions",
         dryRun = false,

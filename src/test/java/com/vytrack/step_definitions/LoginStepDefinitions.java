@@ -27,6 +27,7 @@ public class LoginStepDefinitions {
         String userName = ConfigurationReader.getProperty("user_name");
         String password = ConfigurationReader.getProperty("password");
         loginPage.login(userName, password);
+
     }
 
     //any string in "word" will become a parameter for step definition method
