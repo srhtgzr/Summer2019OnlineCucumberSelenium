@@ -65,7 +65,9 @@
                 <version>3.0.0-M3</version>
                 <configuration>
                     <runOrder>Alphabetical</runOrder>
-                    
+                    <includes>
+            <include>CucumberRunner.java</include>
+          </includes>
                     <testFailureIgnore>false</testFailureIgnore>
                 </configuration>
             </plugin>
@@ -112,7 +114,7 @@
                             <rerunFailingTestsCount>1</rerunFailingTestsCount>
 
                             <includes>
-                                <include>**/RegressionRunner.java</include>
+                                <include>**/CucumberRunner.java</include>
                             </includes>
                             <testFailureIgnore>false</testFailureIgnore>
                         </configuration>
