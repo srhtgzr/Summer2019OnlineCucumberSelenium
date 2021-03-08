@@ -65,10 +65,7 @@
                 <version>3.0.0-M3</version>
                 <configuration>
                     <runOrder>Alphabetical</runOrder>
-                    <includes>
-                        <include>**/CucumberRunner.java</include>
-                        <include>**/FailedRunner.java</include>
-                    </includes>
+                    
                     <testFailureIgnore>false</testFailureIgnore>
                 </configuration>
             </plugin>
